@@ -1,10 +1,11 @@
 
 import React,{useLayoutEffect} from 'react'
-import { View, Text } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { observer } from 'mobx-react'
 import { usePkmStore } from '../../mobx/pkmProvider'
 import { Content,Container } from '@somapay/storybook-somapay-mobile'
 import TopDetails from './UI/TopDetails'
+import BodyDetails from './UI/BodyDetails'
 import { colorTypes } from '../../utils/pkmTypesColor'
 
 
@@ -32,7 +33,9 @@ const PkmDetails = observer(({route,navigation}) => {
 
     return (
         <Container>
-            <Content>
+            <Content scrollViewProps={{
+              //contentContainerStyle:styles...
+            }} >
                 <TopDetails 
                 pkmImage={pokemon.image}
                 pokedexEntry={pkmStore.pokemonDetail.order}
@@ -40,8 +43,21 @@ const PkmDetails = observer(({route,navigation}) => {
                 pokemonTypes={types}
                 pokemonName={pokemon.name}
                 />
+                <BodyDetails
+                pkmName={pokemon.name}
+                
+                />
             </Content>
         </Container>
     )
 })
 export default PkmDetails
+
+const styles=StyleSheet.create({
+  bodyDetails:{
+    position:'absolute',
+    backgroundColor:'red',
+    zIndex:10,
+    height:'100%'
+  }
+})

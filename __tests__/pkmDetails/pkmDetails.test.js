@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react-native'
 import TopDetails from '../../src/pages/details/UI/TopDetails';
+import BodyDetails from '../../src/pages/details/UI/BodyDetails';
 
 let component = null
 
@@ -10,7 +11,7 @@ beforeAll(()=>{
 })
 
 
-describe('Pkm Details Tests',()=>{
+describe('Pkm Details Tests',()=>{      
     it('Should render TopDetails correctly',()=>{//it.skip -- passsar teste
         const { queryByTestId }=render(<TopDetails />)
         const component=queryByTestId('top-details')
@@ -73,4 +74,17 @@ describe('Pkm Details Tests',()=>{
         />).toJSON()
         expect(component).toMatchSnapshot()
     });
+
+    it('Shold render BodyDetails correctly',()=>{
+        const { queryByTestId } = render (<BodyDetails /> )
+        const component=queryByTestId('body-details')
+        expect(component).toBeTruthy()
+    });
+    //renderizar prop
+    it('Shold render pkmname prop',()=>{
+        const pkmName="pikachu"
+        const { queryByTestId } = render (<BodyDetails pkmName={pkmName}/> )
+        const component=queryByTestId('body-details-prop')
+        expect(component).toBeTruthy()
+    })
 })
