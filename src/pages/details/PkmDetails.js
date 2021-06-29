@@ -59,5 +59,5 @@ const styles=StyleSheet.create({
     backgroundColor:'red',
     zIndex:10,
     height:'100%'
-  }
+  },
 })

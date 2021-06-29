@@ -33,7 +33,7 @@ const BodyDetails:React.FC<BodyDetailsProps>=({pkmName})=>{
         }  
     }
     return(
-        <View testID="body-details">
+        <View testID="body-details" style={styles.bodyStyle}>
            <View testID="body-details-prop" style={styles.contHead}>
                 <View >
                     <Text style={styles.headText} >{`${setHeight(pkmStore.pokemonDetail.height)}`}</Text>
@@ -48,7 +48,7 @@ const BodyDetails:React.FC<BodyDetailsProps>=({pkmName})=>{
                <Abilities abilities={listAb(pkmStore.pokemonDetail.abilities)}/>
            </View>
            <View>
-                <StatsList  stats={pkmStore.pokemonDetail.stats}/>
+                <StatsList  stats={pkmStore.pokemonDetail.stats} color={pkmStore.pokemonDetail?.types?.[0]?.type?.name}/>
            </View>
         </View>
     )
@@ -70,5 +70,9 @@ const styles=StyleSheet.create({
     },
     headSubText:{
         alignSelf:'center'
+    },
+    bodyStyle:{
+        height:'100%',
+        
     }
 })
