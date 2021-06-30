@@ -7,6 +7,7 @@ import { Content,Container } from '@somapay/storybook-somapay-mobile'
 import TopDetails from './UI/TopDetails'
 import BodyDetails from './UI/BodyDetails'
 import { colorTypes } from '../../utils/pkmTypesColor'
+import MovesList from './UI/MovesList'
 
 
 const DEFAULT_COLOR = 'red'
@@ -33,9 +34,9 @@ const PkmDetails = observer(({route,navigation}) => {
 
     return (
         <Container>
-            <Content scrollViewProps={{
-              //contentContainerStyle:styles...
-            }} >
+            <Content  scrollViewProps={{
+              
+            }}>
                 <TopDetails 
                 pkmImage={pokemon.image}
                 pokedexEntry={pkmStore.pokemonDetail.order}
@@ -60,4 +61,5 @@ const styles=StyleSheet.create({
     zIndex:10,
     height:'100%'
   },
+  
 })

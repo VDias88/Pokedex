@@ -99,7 +99,7 @@ exports[`Pkm Details Tests should match snapshot <TopDetails /> 1`] = `
         "height": 120,
         "position": "absolute",
         "right": 0,
-        "top": 30,
+        "top": 70,
         "width": 120,
       }
     }

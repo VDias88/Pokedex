@@ -1,9 +1,11 @@
 import React,{ useEffect } from 'react'
-import { View,Text,Image,StyleSheet } from 'react-native'
+import { View,Text,FlatList,StyleSheet } from 'react-native'
 import { usePkmStore } from '../../../mobx/pkmProvider'
 import PkmStore from '../../../mobx/pkmStore';
 import Abilities from '../UI/Abilities' 
 import StatsList from './StatsList';
+import MovesList from './MovesList';
+
 
 type BodyDetailsProps={
     pkmName:string,
@@ -50,6 +52,9 @@ const BodyDetails:React.FC<BodyDetailsProps>=({pkmName})=>{
            <View>
                 <StatsList  stats={pkmStore.pokemonDetail.stats} color={pkmStore.pokemonDetail?.types?.[0]?.type?.name}/>
            </View>
+           <View>
+                <MovesList />
+           </View>
         </View>
     )
 }
@@ -62,6 +67,7 @@ const styles=StyleSheet.create({
     contHead:{
         flexDirection:'row',
         justifyContent:'space-evenly',
+        paddingVertical:20
         
     },
     headText:{

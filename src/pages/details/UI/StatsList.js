@@ -15,7 +15,7 @@ const StatsList=({ stats,color })=>{
     return(
         <View style={styles.statsCont}>
             <View><Text style={styles.txtTitle}>Status</Text></View>
-            <View >
+            <View style={{paddingVertical:20}}>
                 {stats?.map((e,i)=>{
                     return(
                         <View style={styles.sttsRow} key={i}>

@@ -54,13 +54,16 @@ const styles = StyleSheet.create({
     pkmName: {
       fontSize: 32,
       fontWeight: 'bold',
+      textShadowColor: 'rgba(0, 0, 0, 0.75)',
+      textShadowOffset: {width: -1, height: 1},
+      textShadowRadius: 5
     },
     pkmImage: {
       width: 120,
       height: 120,
       position:'absolute',
       right:0,
-      top:30,
+      top:70,
     },
     badge:{
         color:'white',

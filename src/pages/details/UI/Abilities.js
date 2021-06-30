@@ -26,7 +26,8 @@ const styles=StyleSheet.create({
     },
     contAb:{
         flexDirection:'row',
-        alignSelf:'center'
+        alignSelf:'center',
+        padding:20
     },
     abDiv:{
         padding:5,
